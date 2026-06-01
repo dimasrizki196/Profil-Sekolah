@@ -1,107 +1,149 @@
-import MainLayout from '../../Layouts/MainLayout';
-import { Head } from '@inertiajs/react';
-import Card from '../../Components/UI/Card';
+import MainLayout from "../../Layouts/MainLayout";
+import { Head } from "@inertiajs/react";
+import Card from "../../Components/UI/Card";
 
-// Data Dummy Ekstrakurikuler Lengkap
+// Data Ekstrakurikuler MIN 6 Boyolali
 const daftarEkskul = [
     {
-        nama: "Hizbul Wathan (Kepanduan)",
-        jadwal: "Jumat, 15.30 - 17.00 WIB",
-        deskripsi: "Ekskul wajib kepanduan khas Muhammadiyah untuk melatih kemandirian, kedisiplinan, dan cinta alam berlandaskan ajaran Islam.",
-        image: "https://images.unsplash.com/photo-1510525009512-ad7fc13eefab?q=80&w=800&auto=format&fit=crop" // Ganti foto HW
+        nama: "Tahfidz Al-Qur'an",
+        jadwal: "Senin & Rabu, 14.00 WIB",
+        deskripsi:
+            "Program unggulan madrasah untuk mencetak generasi penghafal Al-Qur'an yang tartil dan berakhlakul karimah.",
+        image: "/images/ekskul/ekskul-tahfidz.jpg",
     },
     {
-        nama: "Tapak Suci Putera Muhammadiyah",
-        jadwal: "Sabtu, 15.30 - 17.00 WIB",
-        deskripsi: "Seni bela diri pencak silat untuk melatih ketangkasan fisik, mental, dan spiritual siswa.",
-        image: "https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop" // Ganti foto Silat
+        nama: "Seni Tilawah",
+        jadwal: "Selasa, 14.00 WIB",
+        deskripsi:
+            "Melatih keindahan dan kelancaran melantunkan ayat-ayat suci Al-Qur'an menggunakan berbagai maqom (lagu).",
+        image: "/images/ekskul/ekskul-tilawah.png",
     },
     {
-        nama: "Palang Merah Remaja (PMR)",
-        jadwal: "Kamis, 15.30 - 17.00 WIB",
-        deskripsi: "Wadah pembinaan generasi muda di bidang kesehatan dan pertolongan pertama pada kecelakaan (P3K).",
-        image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" // Ganti foto Medis
+        nama: "Pramuka",
+        jadwal: "Jumat, 14.00 - 16.00 WIB",
+        deskripsi:
+            "Ekskul wajib untuk membentuk kemandirian, kedisiplinan, kerja sama tim, dan kepemimpinan siswa.",
+        image: "/images/ekskul/ekskul-pramuka.jpg",
     },
     {
-        nama: "Paskibra",
-        jadwal: "Selasa & Kamis, 15.30 WIB",
-        deskripsi: "Melatih baris-berbaris, kedisiplinan tingkat tinggi, dan kepemimpinan untuk persiapan upacara hari besar nasional.",
-        image: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=800&auto=format&fit=crop" // Ganti foto Paskibra
+        nama: "Seni Hadroh",
+        jadwal: "Kamis, 14.30 WIB",
+        deskripsi:
+            "Melestarikan kesenian Islam dan menumbuhkan rasa cinta kepada Nabi Muhammad SAW melalui lantunan shalawat.",
+        image: "/images/ekskul/ekskul-hadroh.jpeg",
     },
     {
-        nama: "Ikatan Pelajar Muhammadiyah (IPM)",
-        jadwal: "Rabu, 15.30 - 17.00 WIB",
-        deskripsi: "Organisasi otonom untuk melatih kaderisasi kepemimpinan, keislaman, dan keilmuan siswa di lingkungan sekolah.",
-        image: "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=800&auto=format&fit=crop" // Ganti foto Masjid/Rohis
+        nama: "Bola Voli",
+        jadwal: "Selasa & Kamis, 15.00 WIB",
+        deskripsi:
+            "Menyalurkan bakat olahraga siswa untuk menjaga kebugaran fisik dan melatih kekompakan tim.",
+        image: "/images/ekskul/ekskul-volly.jpg",
     },
     {
-        nama: "Olahraga Futsal & Basket",
-        jadwal: "Senin & Rabu, 15.30 WIB",
-        deskripsi: "Menyalurkan bakat olahraga siswa untuk menjaga kebugaran fisik dan mengikuti berbagai turnamen antar pelajar.",
-        image: "https://images.unsplash.com/photo-1518659328224-8b6ee0dc1875?q=80&w=800&auto=format&fit=crop" // Ganti foto Olahraga
-    }
+        nama: "Taekwondo",
+        jadwal: "Rabu, 15.00 WIB",
+        deskripsi:
+            "Seni bela diri untuk melatih ketangkasan fisik, pertahanan diri, serta kedisiplinan dan mental siswa.",
+        image: "/images/ekskul/ekskul-taekwondo.jpg",
+    },
+    {
+        nama: "Atletik",
+        jadwal: "Senin, 15.00 WIB",
+        deskripsi:
+            "Pembinaan cabang olahraga atletik (lari, lompat, lempar) untuk persiapan kompetisi olahraga pelajar.",
+        image: "/images/ekskul/ekskul-atletik.png",
+    },
+    {
+        nama: "Drumband",
+        jadwal: "Sabtu, 08.00 - 10.00 WIB",
+        deskripsi:
+            "Melatih musikalitas, konsentrasi, dan kekompakan baris-berbaris untuk tampil di berbagai acara madrasah maupun daerah.",
+        image: "/images/ekskul/ekskul-drumband.png",
+    },
 ];
 
 export default function Ekstrakurikuler() {
     return (
         <MainLayout>
-            <Head title="Ekstrakurikuler" />
-            
-            <div className="py-20 px-4 sm:px-6 lg:px-8 bg-background min-h-screen">
+            <Head title="Program Ekstrakurikuler" />
+
+            <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen overflow-hidden">
                 <div className="max-w-7xl mx-auto">
-                    
                     {/* 1. Header Halaman */}
-                    <div className="text-center mb-16 animate-fade-in">
-                        <h1 className="text-3xl md:text-4xl font-extrabold text-secondary mb-4">
-                            Ekstrakurikuler <span className="text-primary">Sekolah</span>
+                    <div data-aos="fade-down" className="text-center mb-16">
+                        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+                            Ekstrakurikuler{" "}
+                            <span className="text-[#0f5132]">Madrasah</span>
                         </h1>
-                        <p className="text-secondary opacity-80 max-w-2xl mx-auto text-lg">
-                            Wadah bagi siswa untuk mengembangkan minat, bakat, kepemimpinan, dan karakter positif di luar jam pelajaran akademik.
+                        <p className="text-gray-500 max-w-2xl mx-auto text-base md:text-lg">
+                            Wadah bagi siswa MIN 6 Boyolali untuk mengembangkan
+                            minat, bakat, kepemimpinan, dan karakter positif di
+                            luar jam pelajaran akademik.
                         </p>
-                        <div className="w-24 h-1.5 bg-primary mx-auto rounded-full opacity-80 mt-6"></div>
+                        <div className="w-24 h-1.5 bg-yellow-400 mx-auto rounded-full mt-6"></div>
                     </div>
 
                     {/* 2. Grid Daftar Ekskul */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {daftarEkskul.map((ekskul, index) => (
-                            <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                                
+                            <Card
+                                key={index}
+                                data-aos="fade-up"
+                                data-aos-delay={(index % 3) * 100}
+                                className="overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col border border-gray-100 bg-white"
+                            >
                                 {/* Gambar Header */}
-                                <div className="h-56 overflow-hidden relative">
+                                <div className="h-56 overflow-hidden relative border-b-4 border-[#0f5132]">
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                                    <img 
-                                        src={ekskul.image} 
-                                        alt={ekskul.nama} 
+                                    <img
+                                        src={ekskul.image}
+                                        alt={ekskul.nama}
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                     />
                                 </div>
 
                                 {/* Konten Informasi */}
                                 <div className="p-6 flex flex-col flex-grow relative">
-                                    {/* Icon Mengambang (Opsional untuk estetika) */}
-                                    <div className="absolute -top-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg z-20 border-4 border-white">
-                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                                    {/* Icon Mengambang (Bintang) */}
+                                    <div className="absolute -top-6 right-6 w-12 h-12 bg-yellow-400 text-[#0f5132] rounded-full flex items-center justify-center shadow-lg z-20 border-4 border-white transform group-hover:rotate-12 transition-transform duration-300">
+                                        <svg
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+                                        </svg>
                                     </div>
 
-                                    <h2 className="text-xl font-bold text-gray-800 mb-3 pr-8">
+                                    <h2 className="text-xl font-bold text-gray-900 mb-3 pr-8 group-hover:text-[#0f5132] transition-colors">
                                         {ekskul.nama}
                                     </h2>
-                                    
+
                                     <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
                                         {ekskul.deskripsi}
                                     </p>
-                                    
+
                                     {/* Jadwal Latihan */}
-                                    <div className="mt-auto pt-4 border-t border-gray-100 flex items-center gap-2 text-sm font-semibold text-primary">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <div className="mt-auto pt-4 border-t border-gray-100 flex items-center gap-2 text-sm font-bold text-[#0f5132]">
+                                        <svg
+                                            className="w-5 h-5 text-yellow-500"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                            ></path>
+                                        </svg>
                                         {ekskul.jadwal}
                                     </div>
                                 </div>
-
                             </Card>
                         ))}
                     </div>
-
                 </div>
             </div>
         </MainLayout>

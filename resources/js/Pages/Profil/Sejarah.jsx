@@ -1,78 +1,86 @@
-import MainLayout from '@/Layouts/MainLayout';
+import MainLayout from "@/Layouts/MainLayout";
+import { Head } from "@inertiajs/react";
 
-// Data dummy untuk Timeline Sejarah
 const sejarahData = [
     {
-        tahun: "1990",
+        tahun: "1985",
         judul: "Awal Berdiri",
-        deskripsi: "SMK Muhammadiyah 2 didirikan atas inisiatif tokoh masyarakat dan pengurus Muhammadiyah setempat untuk memenuhi kebutuhan pendidikan kejuruan yang berlandaskan nilai Islam."
+        deskripsi:
+            "Berawal dari inisiatif para tokoh agama dan masyarakat setempat, madrasah ini didirikan untuk memenuhi kebutuhan pendidikan dasar yang kuat akan penanaman nilai-nilai Islam di tengah masyarakat.",
     },
     {
         tahun: "1995",
-        judul: "Gedung Baru & Tambahan Jurusan",
-        deskripsi: "Sekolah resmi menempati gedung baru yang lebih luas. Pada tahun ini juga, dibuka program keahlian baru untuk merespons kebutuhan industri yang semakin berkembang."
+        judul: "Penegerian Madrasah",
+        deskripsi:
+            "Berdasarkan Keputusan Menteri Agama Republik Indonesia, status madrasah resmi dialihkan menjadi Madrasah Ibtidaiyah Negeri (MIN) 6 Boyolali di bawah naungan penuh Kementerian Agama.",
     },
     {
-        tahun: "2008",
-        judul: "Akreditasi A",
-        deskripsi: "Berkat dedikasi tenaga pendidik dan peningkatan fasilitas praktik, sekolah berhasil meraih predikat Akreditasi A dari Badan Akreditasi Nasional Sekolah/Madrasah (BAN-S/M)."
+        tahun: "2005",
+        judul: "Pengembangan Fasilitas",
+        deskripsi:
+            "Merespons minat masyarakat yang semakin tinggi dari tahun ke tahun, MIN 6 Boyolali melakukan perluasan lahan dan pembangunan gedung kelas baru serta sarana ibadah yang lebih memadai.",
     },
     {
-        tahun: "2015",
-        judul: "Kemitraan Industri Nasional",
-        deskripsi: "Menjalin kerja sama (MoU) dengan berbagai perusahaan berskala nasional untuk program Praktik Kerja Lapangan (PKL) dan penyaluran lulusan langsung kerja."
+        tahun: "2012",
+        judul: "Meraih Akreditasi A",
+        deskripsi:
+            "Berkat dedikasi seluruh tenaga pendidik, dukungan wali murid, dan peningkatan mutu kurikulum, madrasah berhasil meraih predikat Akreditasi A (Unggul) dari Badan Akreditasi Nasional Sekolah/Madrasah (BAN-S/M).",
     },
     {
-        tahun: "2026",
-        judul: "Pusat Keunggulan (Center of Excellence)",
-        deskripsi: "Menjadi sekolah kejuruan rujukan dengan fasilitas praktik berstandar industri modern dan menerapkan kurikulum merdeka berbasis teaching factory."
-    }
+        tahun: "Sekarang",
+        judul: "Madrasah Hebat Bermartabat",
+        deskripsi:
+            "Hingga saat ini, MIN 6 Boyolali terus berinovasi menjadi madrasah rujukan yang memadukan kurikulum nasional yang komprehensif dengan pembiasaan karakter Islami, serta aktif mencetak generasi yang berprestasi baik di bidang akademik maupun non-akademik.",
+    },
 ];
 
 export default function Sejarah() {
     return (
         <MainLayout>
-            <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white min-h-screen">
+            <Head title="Sejarah Madrasah" />
+
+            <div className="py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
                 <div className="max-w-4xl mx-auto">
-                    
-                    {/* 1. Header Halaman */}
-                    <div className="text-center mb-16 animate-fade-in">
-                        <h1 className="text-3xl md:text-4xl font-extrabold text-secondary mb-4">
-                            Sejarah <span className="text-primary">Sekolah</span>
+                    {/* Header Halaman */}
+                    <div data-aos="fade-down" className="text-center mb-12">
+                        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+                            Sejarah{" "}
+                            <span className="text-[#0f5132]">Madrasah</span>
                         </h1>
-                        <div className="w-24 h-1.5 bg-primary mx-auto rounded-full opacity-80"></div>
+                        <div className="w-20 h-1 bg-yellow-400 mx-auto rounded-full"></div>
                     </div>
 
-                    {/* 2. Paragraf Pengantar */}
-                    <div className="mb-16 animate-slide-up text-center">
-                        <p className="text-secondary opacity-90 leading-relaxed text-lg">
-                            Lebih dari tiga dekade, <strong>SMK Muhammadiyah 2</strong> telah mengabdi untuk mencerdaskan kehidupan bangsa. Perjalanan panjang ini penuh dengan dedikasi, inovasi, dan komitmen teguh untuk terus melahirkan generasi yang tidak hanya terampil, namun juga berkarakter Islami.
+                    {/* Kertas/Card Artikel Sejarah */}
+                    <div
+                        data-aos="fade-up"
+                        className="bg-white p-8 md:p-14 rounded-2xl shadow-sm border border-gray-100"
+                    >
+                        <p className="text-gray-700 leading-relaxed text-justify mb-10 text-base md:text-lg">
+                            Lebih dari tiga dekade,{" "}
+                            <strong>MIN 6 Boyolali</strong> telah mengabdi untuk
+                            mencerdaskan kehidupan bangsa. Perjalanan panjang
+                            ini penuh dengan dedikasi, inovasi, dan komitmen
+                            teguh untuk terus melahirkan generasi yang cerdas
+                            dan berkarakter Islami. Berikut adalah ringkasan
+                            perjalanan madrasah kami dari masa ke masa:
                         </p>
-                    </div>
 
-                    {/* 3. Timeline (Garis Waktu) */}
-                    <div className="relative border-l-4 border-gray-100 ml-4 md:ml-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                        {sejarahData.map((item, index) => (
-                            <div key={index} className="mb-10 ml-8 relative group">
-                                
-                                {/* Titik Timeline (Dot) */}
-                                <div className="absolute -left-[43px] top-1 w-6 h-6 bg-white border-4 border-primary rounded-full group-hover:bg-primary transition-colors duration-300"></div>
-                                
-                                {/* Konten Timeline */}
-                                <div className="bg-background p-6 rounded-2xl shadow-sm border border-gray-50 group-hover:shadow-md transition duration-300">
-                                    <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-bold text-sm mb-3">
-                                        Tahun {item.tahun}
-                                    </span>
-                                    <h3 className="text-xl font-bold text-gray-800 mb-2">{item.judul}</h3>
-                                    <p className="text-secondary opacity-80 text-sm md:text-base leading-relaxed">
+                        <div className="space-y-8">
+                            {sejarahData.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="border-l-4 border-[#0f5132] pl-5 py-1"
+                                >
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                        {item.tahun} — {item.judul}
+                                    </h3>
+                                    <p className="text-gray-600 leading-relaxed text-justify">
                                         {item.deskripsi}
                                     </p>
                                 </div>
-
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-
                 </div>
             </div>
         </MainLayout>

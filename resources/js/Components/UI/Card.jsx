@@ -1,7 +1,9 @@
-// Card simpel untuk konten
-export default function Card({ children, className = '' }) {
+export default function Card({ children, className = "", ...props }) {
     return (
-        <div className={`bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition duration-300 ${className}`}>
+        <div
+            className={`bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 ${className}`}
+            {...props}
+        >
             {children}
         </div>
     );
