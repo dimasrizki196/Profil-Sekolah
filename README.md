@@ -1,91 +1,218 @@
 # 🏫 Website Profil MIN 6 Boyolali
 
-Sistem Informasi dan Profil Sekolah interaktif untuk MIN 6 Boyolali. Website ini dibangun dengan antarmuka yang modern, responsif, dan dinamis untuk memudahkan penyampaian informasi kepada siswa, wali murid, dan masyarakat luas.
+Website Profil dan Sistem Informasi MIN 6 Boyolali yang dirancang untuk menyajikan informasi sekolah secara modern, responsif, dan mudah diakses oleh siswa, wali murid, serta masyarakat umum.
+
+---
 
 ## ✨ Fitur Utama
 
-- **Beranda Interaktif**: Menampilkan _hero banner_, sambutan kepala madrasah, dan pintasan informasi ringkas.
-- **Profil Madrasah**: Halaman khusus yang memuat Sejarah, Visi Misi & Tujuan, serta profil Tentang Kami.
-- **Berita & Pengumuman**: Sistem artikel dinamis dengan detail bacaan untuk membagikan kabar terbaru.
-- **Galeri Kegiatan**: Etalase dokumentasi madrasah dengan fitur _Lightbox/Pop-up_ saat foto diperbesar.
-- **Program Ekstrakurikuler**: Katalog ekstrakurikuler madrasah dengan tampilan _grid_ yang responsif.
-- **Informasi PPDB**: Halaman Informasi Penerimaan Peserta Didik Baru lengkap dengan jadwal, syarat, dan tombol integrasi langsung ke WhatsApp panitia.
-- **Hubungi Kami**: Terintegrasi langsung dengan API WhatsApp dan Google Maps sekolah.
-- **UI/UX Modern**: Dilengkapi dengan animasi AOS (_Animate On Scroll_) untuk transisi halaman yang mulus.
+### 🏠 Beranda Interaktif
+
+- Hero banner informatif
+- Sambutan Kepala Madrasah
+- Informasi dan tautan penting dalam satu halaman
+
+### 📖 Profil Madrasah
+
+Menampilkan informasi lengkap mengenai:
+
+- Sejarah Madrasah
+- Visi, Misi, dan Tujuan
+- Tentang Kami
+
+### 📰 Berita & Pengumuman
+
+- Manajemen artikel dinamis
+- Halaman detail berita
+- Penyampaian informasi terbaru kepada pengunjung
+
+### 🖼️ Galeri Kegiatan
+
+- Dokumentasi kegiatan madrasah
+- Tampilan galeri responsif
+- Fitur Lightbox untuk memperbesar gambar
+
+### 🎯 Program Ekstrakurikuler
+
+- Daftar kegiatan ekstrakurikuler
+- Tampilan grid modern dan responsif
+
+### 📝 Informasi PPDB
+
+- Jadwal penerimaan siswa baru
+- Persyaratan pendaftaran
+- Tombol pendaftaran melalui WhatsApp
+
+### 📞 Hubungi Kami
+
+- Integrasi WhatsApp
+- Integrasi Google Maps
+- Informasi kontak sekolah
+
+### 🎨 UI/UX Modern
+
+- Responsive Design
+- Animasi menggunakan AOS (Animate On Scroll)
+- Tampilan yang nyaman di desktop maupun perangkat mobile
+
+---
 
 ## 🛠️ Teknologi yang Digunakan
 
-Proyek ini dikembangkan menggunakan teknologi modern:
+| Teknologi    | Keterangan                   |
+| ------------ | ---------------------------- |
+| Laravel 12   | Backend Framework            |
+| React.js     | Frontend Library             |
+| Inertia.js   | Penghubung Laravel dan React |
+| Tailwind CSS | Styling Framework            |
+| MySQL        | Database                     |
+| AOS          | Library Animasi Scroll       |
 
-- **Frontend:** React.js, Tailwind CSS
-- **Backend:** Laravel 12, Inertia.js
-- **Database:** MySQL
-- **Animasi:** AOS (Animate On Scroll) Library
+---
 
-## 🚀 Panduan Instalasi & Penggunaan
+## 🚀 Instalasi dan Menjalankan Proyek
 
-Ikuti langkah-langkah berikut untuk menjalankan proyek ini di _Localhost_ (komputer lokal):
+### 1. Clone Repository
 
-### 1. Kloning Repositori
+```bash
+git clone https://github.com/dimasrizki196/Profil-Sekolah.git
+cd Profil-Sekolah
+```
 
-git clone [https://github.com/dimasrizki196/Profil-Sekolah.git](https://github.com/dimasrizki196/Profil-Sekolah.git)
-cd profil-sekolah
+---
 
-### 2. Instalasi Dependensi
+### 2. Install Dependencies
 
-Buka terminal di dalam folder proyek, lalu jalankan perintah berikut untuk mengunduh modul PHP dan Node.js:
+Install seluruh dependency backend dan frontend:
 
+```bash
 composer install
+
 npm install
+npm install aos
+npm install @heroicons/react
+```
 
-### 3. Konfigurasi Environment & Database
+---
 
-Salin file .env.example menjadi .env:
+### 3. Konfigurasi Environment
 
+Salin file `.env.example` menjadi `.env`:
+
+```bash
 cp .env.example .env
+```
 
-Buka file .env di teks editor, lalu sesuaikan kredensial koneksi database MySQL kamu:
+Kemudian sesuaikan konfigurasi database pada file `.env`:
 
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=nama_database_kamu
+DB_DATABASE=nama_database
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
-### 4. Generate Key & Migrasi Database
+---
 
-Buat kunci aplikasi Laravel dan jalankan migrasi tabel ke database:
+### 4. Generate Application Key
 
+```bash
 php artisan key:generate
+```
+
+---
+
+### 5. Migrasi Database
+
+```bash
 php artisan migrate
+```
 
-### 5. Tautkan Folder Storage (Sangat Penting!)
+---
 
-Agar gambar-gambar dari database (seperti _thumbnail_ berita) bisa diakses oleh publik, jalankan:
+### 6. Buat Storage Link
 
+Agar file gambar yang tersimpan di storage dapat diakses publik:
+
+```bash
 php artisan storage:link
+```
 
-### 6. Jalankan Server Lokal
+---
 
-Kamu perlu membuka **dua terminal secara bersamaan** untuk menjalankan sisi _frontend_ dan _backend_.
+### 7. Jalankan Aplikasi
 
-**Terminal 1 (Menjalankan Vite/React):**
+Buka **dua terminal** secara bersamaan.
+
+#### Terminal 1 - Menjalankan Frontend (Vite)
+
+```bash
 npm run dev
+```
 
-**Terminal 2 (Menjalankan server PHP Laravel):**
+#### Terminal 2 - Menjalankan Backend (Laravel)
+
+```bash
 php artisan serve
+```
 
-Aplikasi sekarang dapat diakses melalui browser di alamat: http://localhost:8000
+Setelah berhasil dijalankan, aplikasi dapat diakses melalui:
 
-## 📁 Pengaturan Aset Statis (Gambar)
+```text
+http://localhost:8000
+```
 
-Beberapa gambar _layout_ statis memanggil file langsung dari folder public/images/. Pastikan file-file berikut tersedia di dalam folder tersebut agar _User Interface_ berjalan sempurna:
+---
 
-- logo.png (Logo madrasah)
-- kepala-madrasah.png (Foto sambutan)
-- bg-hero-mobile.png (Ilustrasi Tentang Kami)
-- Foto ekstrakurikuler statis (contoh: ekskul-tahfidz.jpg, ekskul-pramuka.jpg, dll.)
-- Folder public/images/galery/ berisi foto g1.jpg hingga g15.jpeg.
+## 📁 Struktur Aset Gambar
 
-_Dibuat dengan dedikasi untuk kemajuan sistem informasi pendidikan MIN 6 Boyolali._
+Beberapa halaman menggunakan gambar statis yang berada di folder:
+
+```text
+public/images/
+```
+
+Pastikan file berikut tersedia:
+
+```text
+public/images/
+│
+├── logo.png
+├── kepala-madrasah.png
+├── bg-hero-mobile.png
+│
+├── galery/
+│   ├── g1.jpg
+│   ├── g2.jpg
+│   ├── ...
+│   └── g15.jpeg
+│
+└── ekstrakurikuler/
+    ├── ekskul-pramuka.jpg
+    ├── ekskul-tahfidz.jpg
+    └── lainnya...
+```
+
+---
+
+## 📌 Persyaratan Sistem
+
+- PHP 8.2 atau lebih baru
+- Composer
+- Node.js dan NPM
+- MySQL
+- Git
+
+---
+
+## 👨‍💻 Developer
+
+Dikembangkan sebagai media informasi digital untuk mendukung penyebaran informasi dan promosi pendidikan di **MIN 6 Boyolali**.
+
+---
+
+## 📄 Lisensi
+
+Proyek ini dibuat untuk kebutuhan pengembangan dan publikasi informasi sekolah MIN 6 Boyolali.
