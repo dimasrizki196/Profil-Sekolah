@@ -166,6 +166,39 @@ http://localhost:8000
 
 ---
 
+## 🔐 Akun Administrator
+
+Untuk keperluan pengujian dan pengelolaan konten website, gunakan akun administrator berikut:
+
+### Login Admin
+
+**Email**
+
+```text
+admin@sekolah.com
+```
+
+**Password**
+
+```text
+password123
+```
+
+### Halaman Login
+
+Akses halaman login melalui:
+
+```text
+http://localhost:8000/login
+```
+
+> ⚠️ Catatan:
+>
+> - Akun di atas hanya digunakan untuk pengembangan atau demo.
+> - Untuk penggunaan di server produksi, segera ubah email dan password administrator demi keamanan.
+
+---
+
 ## 📁 Struktur Aset Gambar
 
 Beberapa halaman menggunakan gambar statis yang berada di folder:
