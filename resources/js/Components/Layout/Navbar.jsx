@@ -1,7 +1,6 @@
 import { Link } from "@inertiajs/react";
 import { useState } from "react";
 
-// Komponen Ikon Panah
 const ChevronDown = ({ className = "" }) => (
     <svg
         className={`w-4 h-4 transition-transform duration-300 ${className}`}
@@ -19,9 +18,7 @@ const ChevronDown = ({ className = "" }) => (
 );
 
 export default function Navbar() {
-    // State untuk membuka/tutup menu utama di Mobile
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    // State untuk membuka/tutup submenu (dropdown) di Mobile
     const [activeDropdown, setActiveDropdown] = useState(null);
 
     const toggleMobileDropdown = (menu) => {
@@ -29,54 +26,29 @@ export default function Navbar() {
     };
 
     return (
-        // Tambahkan relative di sini agar menu dropdown absolute tahu batasnya
         <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* ========================================= */}
-                {/* 1. TAMPILAN MOBILE (Hamburger Menu)       */}
-                {/* ========================================= */}
-                <div className="flex md:hidden items-center justify-between py-4 relative z-10 bg-white">
-                    <span className="font-bold text-[#0f5132] text-sm tracking-widest">
-                        Madrasah Hebat, Bermartabat
-                    </span>
-                    <button
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="text-gray-600 hover:text-[#0f5132] focus:outline-none p-2 rounded-xl bg-gray-50 border border-gray-200 transition"
+                <div className="flex justify-between items-center h-20">
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2.5 md:gap-3 hover:opacity-90 transition group shrink-0"
                     >
-                        <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            {isMobileMenuOpen ? (
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            ) : (
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                />
-                            )}
-                        </svg>
-                    </button>
-                </div>
+                        <img
+                            src="/images/logo.png"
+                            alt="Logo MIN 6 Boyolali"
+                            className="w-10 h-10 md:w-12 md:h-12 object-contain transform group-hover:scale-105 transition duration-300"
+                        />
+                        <div className="flex flex-col justify-center">
+                            <h1 className="text-sm sm:text-base md:text-lg font-extrabold text-[#0f5132] tracking-tight leading-tight">
+                                MIN 6 Boyolali
+                            </h1>
+                            <p className="hidden sm:block text-[10px] md:text-xs text-gray-500 font-semibold tracking-wide">
+                                Kabupaten Boyolali
+                            </p>
+                        </div>
+                    </Link>
 
-                {/* ========================================= */}
-                {/* 2. TAMPILAN DESKTOP                       */}
-                {/* ========================================= */}
-                <div className="hidden md:grid grid-cols-[1fr_auto_1fr] h-16 items-center gap-4">
-                    {/* Kolom 1: Penyeimbang (Kosong) */}
-                    <div></div>
-
-                    {/* Kolom 2: Menu Navigasi (Tengah Sempurna) */}
-                    <div className="flex items-center justify-center gap-6 text-[15px] font-bold text-gray-600">
+                    <div className="hidden lg:flex items-center justify-center gap-6 text-[15px] font-bold text-gray-600">
                         <Link
                             href="/"
                             className="px-2 py-5 hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]"
@@ -84,7 +56,6 @@ export default function Navbar() {
                             Beranda
                         </Link>
 
-                        {/* Dropdown Profil Kami (Desktop: Hover) */}
                         <div className="group relative cursor-pointer px-2 py-5 flex items-center gap-1.5 hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]">
                             <span>Profil Kami</span>
                             <ChevronDown className="text-gray-400 group-hover:text-[#0f5132] group-hover:-rotate-180" />
@@ -111,7 +82,6 @@ export default function Navbar() {
                             </div>
                         </div>
 
-                        {/* Dropdown Informasi (Desktop: Hover) */}
                         <div className="group relative cursor-pointer px-2 py-5 flex items-center gap-1.5 hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]">
                             <span>Informasi</span>
                             <ChevronDown className="text-gray-400 group-hover:text-[#0f5132] group-hover:-rotate-180" />
@@ -146,17 +116,49 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    {/* Kolom 3: Penyeimbang (Kosong) */}
-                    <div></div>
+                    <div className="flex items-center gap-4">
+                        <Link
+                            href="/hubungi"
+                            className="hidden lg:inline-flex bg-[#0f5132] hover:bg-green-800 shadow-md shadow-green-900/20 text-white px-6 py-2.5 rounded-full text-sm font-bold tracking-wide transition items-center justify-center transform hover:-translate-y-0.5 whitespace-nowrap"
+                        >
+                            Hubungi Kami
+                        </Link>
+
+                        <button
+                            onClick={() =>
+                                setIsMobileMenuOpen(!isMobileMenuOpen)
+                            }
+                            className="lg:hidden text-gray-600 hover:text-[#0f5132] focus:outline-none p-2 rounded-xl bg-gray-50 border border-gray-200 transition"
+                        >
+                            <svg
+                                className="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                {isMobileMenuOpen ? (
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                ) : (
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    />
+                                )}
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            {/* ========================================= */}
-            {/* 3. ISI MENU MOBILE (Absolute / Pop-up Melayang) */}
-            {/* ========================================= */}
-            {/* Perhatikan penambahan 'absolute top-full left-0 w-full' di bawah ini */}
             <div
-                className={`md:hidden absolute top-full left-0 w-full bg-white shadow-2xl overflow-y-auto transition-all duration-300 ease-in-out origin-top border-t border-gray-100 ${isMobileMenuOpen ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0"}`}
+                className={`lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl overflow-y-auto transition-all duration-300 ease-in-out origin-top border-t border-gray-100 ${isMobileMenuOpen ? "max-h-[85vh] opacity-100" : "max-h-0 opacity-0"}`}
             >
                 <div className="px-4 py-4 space-y-1 font-bold text-gray-700">
                     <Link
@@ -166,7 +168,6 @@ export default function Navbar() {
                         Beranda
                     </Link>
 
-                    {/* Accordion Profil Kami */}
                     <div>
                         <button
                             onClick={() => toggleMobileDropdown("profil")}
@@ -201,7 +202,6 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Accordion Informasi */}
                     <div>
                         <button
                             onClick={() => toggleMobileDropdown("informasi")}
@@ -242,6 +242,15 @@ export default function Navbar() {
                     >
                         Galeri
                     </Link>
+
+                    <div className="pt-4 mt-2 border-t border-gray-100">
+                        <Link
+                            href="/hubungi"
+                            className="flex items-center justify-center w-full bg-[#0f5132] text-white px-4 py-3 rounded-xl font-bold transition hover:bg-green-800"
+                        >
+                            Hubungi Kami
+                        </Link>
+                    </div>
                 </div>
             </div>
         </nav>

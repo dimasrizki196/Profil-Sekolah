@@ -2,7 +2,7 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative w-full h-[80vh] min-h-[500px] md:h-[600px] lg:h-[700px] flex items-center overflow-hidden"
+            className="relative w-full h-[80vh] min-h-[500px] md:h-[600px] lg:h-[700px] flex items-end pb-16 md:pb-24 overflow-hidden"
         >
             <img
                 src="/images/bg-hero-mobile.png"
@@ -15,13 +15,12 @@ export default function Hero() {
                 alt="Lingkungan MIN 6 Boyolali Desktop"
                 className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a3822]/90 via-[#0a3822]/40 to-transparent"></div>
 
-            <div className="absolute inset-0 bg-black/40 md:bg-black/20 bg-gradient-to-t md:bg-gradient-to-r from-[#0a3822]/90 via-[#0a3822]/50 to-transparent"></div>
-
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start text-left mt-10 md:mt-0">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start text-left">
                 <span
                     data-aos="fade-down"
-                    className="inline-block py-2 px-6 rounded-full bg-white/10 border border-white/20 text-yellow-300 text-xs md:text-sm font-bold tracking-widest uppercase mb-6 md:mb-8 backdrop-blur-md shadow-lg"
+                    className="inline-block py-2 px-6 rounded-full bg-white/10 border border-white/20 text-yellow-300 text-xs md:text-sm font-bold tracking-widest uppercase mb-4 md:mb-6 backdrop-blur-md shadow-lg"
                 >
                     Selamat Datang di Website Resmi
                 </span>
@@ -29,7 +28,7 @@ export default function Hero() {
                 <h1
                     data-aos="fade-right"
                     data-aos-delay="100"
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 drop-shadow-xl"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 md:mb-6 drop-shadow-xl"
                 >
                     MIN 6 <br className="sm:hidden" />
                     <span className="text-yellow-400">BOYOLALI</span>
