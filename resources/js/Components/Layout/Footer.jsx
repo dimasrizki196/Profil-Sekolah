@@ -24,7 +24,7 @@ export default function Footer() {
                                 />
                             </div>
                             <div className="flex flex-col justify-center">
-                                <h2 className="text-xl md:text-2xl font-extrabold text-white tracking-wide leading-tight">
+                                <h2 className="text-2xl md:text-3xl font-extrabold text-white tracking-wide leading-tight">
                                     MIN 6 BOYOLALI
                                 </h2>
                                 <p className="text-xs md:text-sm text-green-400 font-bold tracking-widest mt-0.5">
@@ -34,7 +34,7 @@ export default function Footer() {
                         </Link>
 
                         {/* Alamat & Kontak */}
-                        <div className="text-gray-300 text-sm leading-relaxed space-y-4">
+                        <div className="text-gray-300 text-base leading-relaxed space-y-4">
                             <p className="flex items-start gap-3">
                                 <svg
                                     className="w-5 h-5 text-green-400 shrink-0 mt-0.5"
@@ -80,11 +80,11 @@ export default function Footer() {
                     {/* KOLOM 2: Menu Profil Sekolah          */}
                     {/* ===================================== */}
                     <div>
-                        <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
+                        <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
                             Profil Sekolah
                             <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-green-500 rounded-full"></span>
                         </h3>
-                        <ul className="flex flex-col gap-4 text-gray-300 text-sm font-medium">
+                        <ul className="flex flex-col gap-4 text-gray-300 text-base font-medium">
                             <li>
                                 <Link
                                     href="/profil/sejarah"
@@ -140,11 +140,11 @@ export default function Footer() {
                     {/* KOLOM 3: Sosial Media                 */}
                     {/* ===================================== */}
                     <div>
-                        <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
+                        <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
                             Sosial Media
                             <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-green-500 rounded-full"></span>
                         </h3>
-                        <ul className="flex flex-col gap-4 text-gray-300 text-sm font-medium">
+                        <ul className="flex flex-col gap-4 text-gray-300 text-base font-medium">
                             {/* Facebook */}
                             <li>
                                 <a

@@ -26,7 +26,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm relative">
+        <nav className="bg-white border-b border-gray-100 sticky top-0 md:top-7 lg:top-7 z-50 shadow-sm relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     <Link
@@ -39,7 +39,7 @@ export default function Navbar() {
                             className="w-10 h-10 md:w-12 md:h-12 object-contain transform group-hover:scale-105 transition duration-300"
                         />
                         <div className="flex flex-col justify-center">
-                            <h1 className="text-sm sm:text-base md:text-lg font-extrabold text-[#0f5132] tracking-tight leading-tight">
+                            <h1 className="text-sm sm:text-base md:text-xl font-extrabold text-[#0f5132] tracking-tight leading-tight">
                                 MIN 6 Boyolali
                             </h1>
                             <p className="hidden sm:block text-[10px] md:text-xs text-gray-500 font-semibold tracking-wide">
@@ -51,7 +51,7 @@ export default function Navbar() {
                     <div className="hidden lg:flex items-center justify-center gap-6 text-[15px] font-bold text-gray-600">
                         <Link
                             href="/"
-                            className="px-2 py-5 hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]"
+                            className="px-2 py-5 text-base hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]"
                         >
                             Beranda
                         </Link>
@@ -63,19 +63,19 @@ export default function Navbar() {
                             <div className="absolute hidden group-hover:block bg-white shadow-xl top-full left-1/2 -translate-x-1/2 w-52 rounded-xl border-t-4 border-[#0f5132] overflow-hidden transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <Link
                                     href="/profil/sejarah"
-                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition border-b border-gray-50 text-sm"
+                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition border-b border-gray-50 text-base"
                                 >
                                     Sejarah
                                 </Link>
                                 <Link
                                     href="/profil/tentang"
-                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition border-b border-gray-50 text-sm"
+                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition border-b border-gray-50 text-base"
                                 >
                                     Tentang Kami
                                 </Link>
                                 <Link
                                     href="/profil/visi-misi"
-                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition text-sm"
+                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition text-base"
                                 >
                                     Visi Misi Tujuan
                                 </Link>
@@ -83,19 +83,19 @@ export default function Navbar() {
                         </div>
 
                         <div className="group relative cursor-pointer px-2 py-5 flex items-center gap-1.5 hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]">
-                            <span>Informasi</span>
+                            <span className="text-base">Informasi</span>
                             <ChevronDown className="text-gray-400 group-hover:text-[#0f5132] group-hover:-rotate-180" />
 
                             <div className="absolute hidden group-hover:block bg-white shadow-xl top-full left-1/2 -translate-x-1/2 w-48 rounded-xl border-t-4 border-[#0f5132] overflow-hidden">
                                 <Link
                                     href="/info/berita"
-                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition border-b border-gray-50 text-sm"
+                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition border-b border-gray-50 text-base"
                                 >
                                     Berita Sekolah
                                 </Link>
                                 <Link
                                     href="/info/ppdb"
-                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition text-sm"
+                                    className="block px-5 py-3.5 hover:bg-green-50 hover:text-[#0f5132] transition text-base"
                                 >
                                     Info PPDB
                                 </Link>
@@ -104,13 +104,13 @@ export default function Navbar() {
 
                         <Link
                             href="/profil/ekstrakurikuler"
-                            className="px-2 py-5 hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]"
+                            className="px-2 py-5 text-base hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]"
                         >
                             Ekstrakurikuler
                         </Link>
                         <Link
                             href="/profil/galeri"
-                            className="px-2 py-5 hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]"
+                            className="px-2 py-5 text-base hover:text-[#0f5132] transition border-b-2 border-transparent hover:border-[#0f5132]"
                         >
                             Galeri
                         </Link>

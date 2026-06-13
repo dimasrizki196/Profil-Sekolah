@@ -78,14 +78,13 @@ export default function Ekstrakurikuler() {
             nextSlide();
         }, 3000);
 
-        // Membersihkan interval saat komponen dibongkar atau state berubah
         return () => clearInterval(interval);
     }, [nextSlide]);
 
     return (
         <section
             id="ekstrakurikuler"
-            className="py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden"
+            className="py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-yellow-50 overflow-hidden"
         >
             <div className="max-w-7xl mx-auto">
                 {/* Bagian Header: Judul di Kiri dan Tombol Panah di Kanan */}
@@ -94,13 +93,14 @@ export default function Ekstrakurikuler() {
                     className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4"
                 >
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2 drop-shadow-sm">
                             Program{" "}
                             <span className="text-[#0f5132]">
                                 Ekstrakurikuler
                             </span>
                         </h2>
-                        <p className="text-gray-500 text-sm md:text-base">
+                        {/* Warna teks dipergelap agar kontras dengan background kuning */}
+                        <p className="text-gray-800 font-medium text-sm md:text-lg">
                             Wadah pengembangan bakat dan minat siswa di madrasah
                             kami
                         </p>
@@ -110,7 +110,7 @@ export default function Ekstrakurikuler() {
                     <div className="flex gap-3">
                         <button
                             onClick={prevSlide}
-                            className="w-10 h-10 rounded-full border border-[#0f5132] text-[#0f5132] flex items-center justify-center hover:bg-[#0f5132] hover:text-white transition duration-300 shadow-sm"
+                            className="w-10 h-10 rounded-full bg-white text-[#0f5132] flex items-center justify-center hover:bg-[#0f5132] hover:text-white transition duration-300 shadow-md"
                         >
                             <svg
                                 className="w-5 h-5"
@@ -128,7 +128,7 @@ export default function Ekstrakurikuler() {
                         </button>
                         <button
                             onClick={nextSlide}
-                            className="w-10 h-10 rounded-full border border-[#0f5132] text-[#0f5132] flex items-center justify-center hover:bg-[#0f5132] hover:text-white transition duration-300 shadow-sm"
+                            className="w-10 h-10 rounded-full bg-white text-[#0f5132] flex items-center justify-center hover:bg-[#0f5132] hover:text-white transition duration-300 shadow-md"
                         >
                             <svg
                                 className="w-5 h-5"
@@ -160,14 +160,13 @@ export default function Ekstrakurikuler() {
                         }}
                     >
                         {ekskulData.map((item, index) => (
-                            // Pembungkus Card untuk mengatur lebar dan jarak (gap)
                             <div
                                 key={index}
                                 style={{ width: `${100 / itemsPerView}%` }}
-                                className="flex-shrink-0 px-3 lg:px-4"
+                                className="flex-shrink-0 px-3 lg:px-4 py-2"
                             >
-                                <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer h-full flex flex-col">
-                                    {/* Gambar */}
+                                {/* Card diperbarui dengan shadow lebih besar agar memisah dari background kuning */}
+                                <div className="bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer h-full flex flex-col border-0">
                                     <div className="w-full h-56 overflow-hidden shrink-0">
                                         <img
                                             src={item.image}
@@ -176,7 +175,6 @@ export default function Ekstrakurikuler() {
                                         />
                                     </div>
 
-                                    {/* Judul di dalam Box Putih */}
                                     <div className="p-5 text-center flex-grow flex items-center justify-center">
                                         <h3 className="font-bold text-gray-800 text-lg group-hover:text-[#0f5132] transition-colors">
                                             {item.title}

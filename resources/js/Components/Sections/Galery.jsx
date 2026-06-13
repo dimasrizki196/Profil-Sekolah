@@ -39,7 +39,7 @@ export default function Galeri() {
                     <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
                         Galeri <span className="text-[#0f5132]">Kegiatan</span>
                     </h2>
-                    <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
+                    <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto">
                         Dokumentasi berbagai aktivitas, fasilitas, dan momen
                         penting di madrasah kami.
                     </p>
@@ -84,7 +84,7 @@ export default function Galeri() {
 
                 <div data-aos="fade-up" className="mt-14 text-center">
                     <Link
-                        href="/galeri"
+                        href="/profil/galeri"
                         className="inline-block border-2 border-[#0f5132] text-[#0f5132] hover:bg-[#0f5132] hover:text-white font-bold px-8 py-3 rounded-full transition-colors duration-300 shadow-sm"
                     >
                         Lihat Semua Foto

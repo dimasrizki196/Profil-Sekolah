@@ -39,7 +39,7 @@ export default function Tentang() {
                                 </span>
                             </h2>
 
-                            <div className="space-y-5 text-gray-600 leading-relaxed text-justify mb-8">
+                            <div className="space-y-5 text-base text-gray-600 leading-relaxed text-justify mb-8">
                                 <p>
                                     <strong>MIN 6 Boyolali</strong> adalah
                                     lembaga pendidikan tingkat dasar berciri

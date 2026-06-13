@@ -1,5 +1,6 @@
 import Navbar from "@/Components/Layout/Navbar";
 import Footer from "@/Components/Layout/Footer";
+import Topbar from "@/Components/Layout/Topbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -15,6 +16,7 @@ export default function MainLayout({ children }) {
     }, []);
     return (
         <div className="min-h-screen flex flex-col bg-background">
+            <Topbar />
             <Navbar />
             <main className="flex-grow">{children}</main>
             <Footer />

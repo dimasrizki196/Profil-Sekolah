@@ -89,7 +89,7 @@ export default function Berita({ beritas }) {
                                         </Link>
 
                                         {/* Memotong teks cukup menggunakan line-clamp-3 dari Tailwind */}
-                                        <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed">
+                                        <p className="text-gray-600 text-base mb-6 line-clamp-3 leading-relaxed">
                                             {item.content}
                                         </p>
 
